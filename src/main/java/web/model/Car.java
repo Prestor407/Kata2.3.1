@@ -3,22 +3,22 @@ package web.model;
 import java.util.Objects;
 
 public class Car {
-    private int HP;
+    private int horsepower;
     private String model;
     private int year;
 
-    public Car(int year, String model, int HP) {
+    public Car(int year, String model, int horsepower) {
         this.year = year;
         this.model = model;
-        this.HP = HP;
+        this.horsepower = horsepower;
     }
 
-    public int getHP() {
-        return HP;
+    public int getHorsepower() {
+        return horsepower;
     }
 
-    public void setHP(int HP) {
-        this.HP = HP;
+    public void setHorsepower(int horsepower) {
+        this.horsepower = horsepower;
     }
 
     public String getModel() {
@@ -40,7 +40,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "HP=" + HP +
+                "HP=" + horsepower+
                 ", model='" + model + '\'' +
                 ", year=" + year +
                 '}';
@@ -50,11 +50,11 @@ public class Car {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return HP == car.HP && year == car.year && Objects.equals(model, car.model);
+        return horsepower == car.horsepower && year == car.year && Objects.equals(model, car.model);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(HP, model, year);
+        return Objects.hash(horsepower, model, year);
     }
 }
