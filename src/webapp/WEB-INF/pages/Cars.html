@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мафынки</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<h1 class="mt-5">Мафынки</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Model</th>
+        <th scope="col">Year</th>
+        <th scope="col">Horsepowers</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.year}"></td>
+        <td th:text="${car.HP}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
