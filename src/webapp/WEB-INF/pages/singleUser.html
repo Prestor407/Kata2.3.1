@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>User</title>
 </head>
 <body>
+
+<h2>User's data</h2>
+<br>
+<a th:href="@{/}">Main page</a>
+<br>
+<th:block>
+    <table>
+        <tr>
+            <td><b>ID:</b></td>
+            <td th:text = "${user.getId()}"></td>
+        </tr>
+        <tr>
+            <td><b>Name:</b></td>
+            <td th:text = "${user.getName}"></td>
+        </tr>
+        <tr>
+            <td><b>Age:</b></td>
+            <td th:text = "${user.getAge}"></td>
+        </tr>
+        <tr>
+            <td><b>Email</b></td>
+            <td th:text = "${user.getEmail}"></td>
+        </tr>
+    </table>
+</th:block>
 
 </body>
 </html>

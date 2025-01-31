@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Users</title>
@@ -14,6 +13,8 @@
         <th>Name</th>
         <th>Age</th>
         <th>email</th>
+        <th>Delete user</th>
+        <th>Change user`s data</th>
     </tr>
     </thead>
     <tbody>
@@ -22,8 +23,15 @@
         <td th:text="${user.name}"></td>
         <td th:text="${user.age}"></td>
         <td th:text="${user.email}"></td>
+        <td> <a th:href="@{/delete_user(id=${user.getId()})}" th:text="Delete"></a>
+        <td> <a th:href="@{/edit(id=${user.getId()})}" th:text="Edit"></a>
+    </td>
     </tr>
     </tbody>
 </table>
+
+<form  th:method = "GET" th:action="@{/new_user}">
+    <input type="submit" value="Add user" />
+</form>
 </body>
 </html>
