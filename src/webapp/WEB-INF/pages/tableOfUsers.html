@@ -19,7 +19,7 @@
     </thead>
     <tbody>
     <tr th:each="user : ${allUsers}">
-        <td th:text="${user.id}"></td>
+        <td><a th:href="@{/single_user(id=${user.getId()})}" th:text="${user.getId()}"></a></td>
         <td th:text="${user.name}"></td>
         <td th:text="${user.age}"></td>
         <td th:text="${user.email}"></td>
