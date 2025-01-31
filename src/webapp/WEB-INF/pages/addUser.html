@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New user</title>
+</head>
+<body>
+
+<h2>New user</h2>
+<br/>
+<a th:href="@{/}">Main page</a>
+<br/>
+
+<form th:method="post" th:action="@{/}" th:object="${user}">
+
+    <label for="name">Enter name: </label>
+    <input type="text" th:field="${user.name}" id="name"/>
+    <br/>
+
+    <label for="age">Enter age:</label>
+    <input type="text" th:field="${user.age}" id="age"/>
+    <br/>
+
+    <label for="email">Enter email:</label>
+    <input type="text" th:field="${user.email}" id="email">
+
+    <input type="submit" value="Enter"/>
+</form>
+</body>
+</html>
