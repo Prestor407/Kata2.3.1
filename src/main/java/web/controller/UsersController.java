@@ -30,13 +30,13 @@ public class UsersController {
     }
 
     @GetMapping("/new_user")
-    public String newUser(Model model) {
+    public String addUser(Model model) {
         model.addAttribute("user", new User());
         return "addUser";
     }
 
     @PostMapping
-    public String addUser(@ModelAttribute("user") User user) {
+    public String saveUser(@ModelAttribute("user") User user) {
         userService.addUser(user);
         return "redirect:/";
     }
